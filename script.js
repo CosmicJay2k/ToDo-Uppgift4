@@ -39,7 +39,7 @@ inputHTML.addEventListener("keyup", function (e) {
 
 /* Funktion för att lägga till */
 function addItem() {
-  const text = input.value.toUpperCase();
+  const text = input.value;
   if (text.length == 0) { // Kontrollerar att något är skrivet
     msg.innerHTML = "Skriv något!";
     getFocus();
