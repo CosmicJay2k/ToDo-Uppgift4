@@ -14,7 +14,7 @@ small{
   color: white;
   font-size: 1em
 }
-input{
+#inputHTML{
   font-size: 1em;
 }
 button{
@@ -35,4 +35,9 @@ li{
 .trashcan{
   font-size: 0.8em;
   cursor: pointer;
+}
+footer{
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
 }

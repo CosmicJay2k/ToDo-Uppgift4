@@ -6,58 +6,79 @@ const msg = document.querySelector("h2"); // Meddelande
 const headText = document.querySelector("h1"); // Rubrik
 let completedCount = 0; // Räknare
 
+/* Funtion för att alltid vara redo att skriva */
+function getFocus() {
+  input.focus();
+}
+getFocus();
+
 /* Funktion för räknare */
 function counterFunc() {
   if (completedCount == 0) {
-    headText.innerHTML = `Du har ${completedCount} saker kvar att göra!`
+    headText.innerHTML = `Du har ${completedCount} saker kvar att göra!`;
   }
   else if (completedCount == 1) { // För formuleringen
-    headText.innerHTML = `Du har ${completedCount} sak kvar att göra!`
+    headText.innerHTML = `Du har ${completedCount} sak kvar att göra!`;
   }
   else {
-    headText.innerHTML = `Du har ${completedCount} saker kvar att göra!`
+    headText.innerHTML = `Du har ${completedCount} saker kvar att göra!`;
   }
 };
 
-/* Knapptryck: Lägga till */
+/* Klicka på knappen: Lägga till */
 btnAdd.addEventListener("click", addItem);
+
+/* Trycka Return/Enter: Lägga till */
+inputHTML.addEventListener("keyup", function (e) {
+  //let key = e.which || e.keyCode || 0;
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    addItem();
+  }
+});
 
 /* Funktion för att lägga till */
 function addItem() {
-  const text = input.value.toUpperCase(); // Tar in värdet från input o sätter på "text"
+  const text = input.value.toUpperCase();
   if (text.length == 0) { // Kontrollerar att något är skrivet
-    msg.innerHTML = "Skriv något!"; // Ändrar meddelande
+    msg.innerHTML = "Skriv något!";
+    getFocus();
     return;
   }
   else { // Lägg till i listan
-    const item = document.createElement("li"); // Definierar ett objekt
-    list.appendChild(item); // Lägger till objektet i listan
-    const itemLabel = document.createElement("span"); // Definierar ett objekt
-    itemLabel.innerText = text; // Stoppar in input i objektet
-    item.appendChild(itemLabel); // Lägger till objektet i objektet
+    const item = document.createElement("li");
+    list.appendChild(item);
+
+    const itemLabel = document.createElement("span");
+    itemLabel.innerText = text;
+    item.appendChild(itemLabel);
+
     const trashcan = document.createElement("span"); // Soptunna
     trashcan.innerHTML = ' &#x1F5D1;';
     trashcan.setAttribute("class", "trashcan");
     item.appendChild(trashcan)
-    stuffArray.push(text); // Lägge till i array
+
+    stuffArray.push(text); // Lägger till i array
     input.value = ""; // Tömmer input
-    msg.innerHTML = "Lägg till något mer!"; // Ändrar meddelande
+    msg.innerHTML = "Lägg till något mer!";
     completedCount++;
     counterFunc() // Räknarfunktion
+    getFocus();
 
-    /* Funktion för markering */ // Skulle vilja flytta ut denna funktion ??
-    itemLabel.addEventListener("click", markItem);
-    function markItem() {
+    /* Funktion för markering */
+    itemLabel.addEventListener("click", function () {
       if (item.getAttribute("class") == "completed") {
         item.setAttribute("class", "");
         completedCount++;
+        getFocus();
       }
       else {
         item.setAttribute("class", "completed");
         completedCount--;
+        getFocus();
       }
       counterFunc()
-    };
+    });
 
     /* Funktion för att ta bort */
     trashcan.addEventListener("click", function () {
@@ -68,7 +89,8 @@ function addItem() {
         item.remove();
         completedCount--;
       }
-      counterFunc()
+      counterFunc();
+      getFocus();
     });
   }
 };
