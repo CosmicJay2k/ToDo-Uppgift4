@@ -6,7 +6,7 @@ const msg = document.querySelector("h2"); // Meddelande
 const headText = document.querySelector("h1"); // Rubrik
 let completedCount = 0; // Räknare
 
-/* Funtion för att alltid vara redo att skriva */
+/* Funktion för att alltid vara redo att skriva */
 function getFocus() {
   input.focus();
 }
@@ -14,10 +14,7 @@ getFocus();
 
 /* Funktion för räknare */
 function counterFunc() {
-  if (completedCount == 0) {
-    headText.innerHTML = `Du har ${completedCount} saker kvar att göra!`;
-  }
-  else if (completedCount == 1) { // För formuleringen
+  if (completedCount == 1) { // För formuleringen
     headText.innerHTML = `Du har ${completedCount} sak kvar att göra!`;
   }
   else {
