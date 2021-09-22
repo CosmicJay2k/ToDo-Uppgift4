@@ -47,12 +47,12 @@ function addItem() {
     list.appendChild(item);
 
     const itemLabel = document.createElement("span");
-    itemLabel.innerText = text;
+    itemLabel.innerText = text + "  ";
     itemLabel.setAttribute("class", "label");
     item.appendChild(itemLabel);
 
     const trashcan = document.createElement("span"); // Soptunna
-    trashcan.innerHTML = ' &#x1F5D1;';
+    trashcan.innerHTML = '&#x1F5D1;';
     trashcan.setAttribute("class", "trashcan");
     item.appendChild(trashcan)
 
