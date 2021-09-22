@@ -4,7 +4,7 @@ const list = document.querySelector("ul"); // Lista
 const stuffArray = []; // Array för lagring
 const msg = document.querySelector("h2"); // Meddelande
 const headText = document.querySelector("h1"); // Rubrik
-let completedCount = 0; // Räknare
+let leftToDoCount = 0; // Räknare
 
 /* Funktion för att alltid vara redo att skriva */
 function getFocus() {
@@ -14,11 +14,11 @@ getFocus();
 
 /* Funktion för räknare */
 function counterFunc() {
-  if (completedCount == 1) { // För formuleringen
-    headText.innerHTML = `Du har ${completedCount} sak kvar att göra!`;
+  if (leftToDoCount == 1) { // För formuleringen
+    headText.innerHTML = `Du har ${leftToDoCount} sak kvar att göra!`;
   }
   else {
-    headText.innerHTML = `Du har ${completedCount} saker kvar att göra!`;
+    headText.innerHTML = `Du har ${leftToDoCount} saker kvar att göra!`;
   }
 };
 
@@ -48,6 +48,7 @@ function addItem() {
 
     const itemLabel = document.createElement("span");
     itemLabel.innerText = text;
+    itemLabel.setAttribute("class", "label");
     item.appendChild(itemLabel);
 
     const trashcan = document.createElement("span"); // Soptunna
@@ -58,20 +59,20 @@ function addItem() {
     stuffArray.push(text); // Lägger till i array
     input.value = ""; // Tömmer input
     msg.innerHTML = "Lägg till något mer!";
-    completedCount++;
+    leftToDoCount++;
     counterFunc() // Räknarfunktion
     getFocus();
 
     /* Metod för markering */
     itemLabel.addEventListener("click", function () {
-      if (item.getAttribute("class") == "completed") {
-        item.setAttribute("class", "");
-        completedCount++;
+      if (itemLabel.getAttribute("class") == "completed") {
+        itemLabel.setAttribute("class", "");
+        leftToDoCount++;
         getFocus();
       }
       else {
-        item.setAttribute("class", "completed");
-        completedCount--;
+        itemLabel.setAttribute("class", "completed");
+        leftToDoCount--;
         getFocus();
       }
       counterFunc()
@@ -79,12 +80,12 @@ function addItem() {
 
     /* Metod för att ta bort */
     trashcan.addEventListener("click", function () {
-      if (item.getAttribute("class") == "completed") { // Så att räknaren går rätt
+      if (itemLabel.getAttribute("class") == "completed") { // Så att räknaren går rätt
         item.remove();
       }
       else {
         item.remove();
-        completedCount--;
+        leftToDoCount--;
       }
       counterFunc();
       getFocus();

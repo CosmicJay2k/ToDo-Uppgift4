@@ -36,10 +36,9 @@ li{
 .trashcan{
   font-size: 0.8em;
   cursor: pointer;
+  text-decoration: none;
 }
 footer{
-  position:static;
-  bottom: 5px;
-  width: 100%;
+  position: static;
   font-size: 0.6em;
 }
