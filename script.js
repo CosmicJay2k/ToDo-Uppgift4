@@ -2,7 +2,7 @@
 const input = document.querySelector("input"); // Input
 const list = document.querySelector("ul"); // Lista
 const stuffArray = []; // Array för lagring
-const msg = document.querySelector("h2"); // Meddelande
+const msg = document.querySelector("#msgHTML"); // Meddelande
 const headText = document.querySelector("h1"); // Rubrik
 let leftToDoCount = 0; // Räknare
 
@@ -45,13 +45,13 @@ function addItem() {
   else { // Lägg till i listan
     const item = document.createElement("li");
     list.appendChild(item);
-
+    /* Label */
     const itemLabel = document.createElement("span");
     itemLabel.innerText = text + "  ";
     itemLabel.setAttribute("class", "label");
     item.appendChild(itemLabel);
-
-    const trashcan = document.createElement("span"); // Soptunna
+    /* Soptunna */
+    const trashcan = document.createElement("span");
     trashcan.innerHTML = '&#x1F5D1;';
     trashcan.setAttribute("class", "trashcan");
     item.appendChild(trashcan)
