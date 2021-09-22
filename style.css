@@ -38,6 +38,9 @@ li{
   cursor: pointer;
   text-decoration: none;
 }
+.trashcan:hover{
+  font-size: 1em;
+}
 footer{
   position: static;
   font-size: 0.6em;
