@@ -42,6 +42,7 @@ li{
   font-size: 1em;
 }
 footer{
-  position: static;
+  position: fixed;
+  bottom: 5px;
   font-size: 0.6em;
 }
