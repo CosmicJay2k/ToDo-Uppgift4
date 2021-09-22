@@ -1,7 +1,8 @@
 body{
   background-color: rgb(65, 76, 97);
   text-align: center;
-  font-family: "Helvetica Neue",Helvetica;
+  font-family: 'Nunito', sans-serif;
+  font-size: calc(14px + (24 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 h1{
   font-size: 2.2em;
@@ -37,7 +38,8 @@ li{
   cursor: pointer;
 }
 footer{
-  position: fixed;
+  position:static;
   bottom: 5px;
   width: 100%;
+  font-size: 0.6em;
 }

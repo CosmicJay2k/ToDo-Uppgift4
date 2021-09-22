@@ -62,7 +62,7 @@ function addItem() {
     counterFunc() // Räknarfunktion
     getFocus();
 
-    /* Funktion för markering */
+    /* Metod för markering */
     itemLabel.addEventListener("click", function () {
       if (item.getAttribute("class") == "completed") {
         item.setAttribute("class", "");
@@ -77,7 +77,7 @@ function addItem() {
       counterFunc()
     });
 
-    /* Funktion för att ta bort */
+    /* Metod för att ta bort */
     trashcan.addEventListener("click", function () {
       if (item.getAttribute("class") == "completed") { // Så att räknaren går rätt
         item.remove();
