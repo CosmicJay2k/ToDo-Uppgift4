@@ -27,8 +27,8 @@ btnAdd.addEventListener("click", addItem);
 
 /* Trycka Return/Enter: Lägga till */
 inputHTML.addEventListener("keyup", function (e) {
-  //let key = e.which || e.keyCode || 0;
-  if (e.keyCode === 13) {
+  let key = e.which || e.keyCode || 0;
+  if (key === 13) {
     e.preventDefault();
     addItem();
   }
