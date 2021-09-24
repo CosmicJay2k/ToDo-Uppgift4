@@ -11,10 +11,7 @@ h1{
 h2{
   color: white;
 }
-#inputHTML{
-  font-size: 1em;
-}
-button{
+#inputHTML, button{
   font-size: 1em;
 }
 .completed{
