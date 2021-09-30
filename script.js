@@ -36,7 +36,6 @@ function addItem() {
   if (text.length == 0) { // Kontrollerar att något är skrivet
     msg.innerHTML = "Skriv något!";
     input.focus();
-    //return;
   }
   else { // Lägg till i listan
     const item = document.createElement("li");
