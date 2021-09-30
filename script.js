@@ -6,7 +6,7 @@ const msg = document.querySelector("#msgHTML"); // Meddelande
 const headText = document.querySelector("h1"); // Rubrik
 let leftToDoCount = 0; // Räknare
 
-input.focus();
+input.focus(); // För att alltid kunna skriva
 
 /* Funktion för räknare */
 function counterFunc() {
@@ -36,7 +36,7 @@ function addItem() {
   if (text.length == 0) { // Kontrollerar att något är skrivet
     msg.innerHTML = "Skriv något!";
     input.focus();
-    return;
+    //return;
   }
   else { // Lägg till i listan
     const item = document.createElement("li");
@@ -76,8 +76,7 @@ function addItem() {
 
     /* Metod för att ta bort */
     trashcan.addEventListener("click", function () {
-      const index = stuffArray.indexOf(text);
-      stuffArray.splice(index, 1);
+      stuffArray.splice(stuffArray.indexOf(text), 1); // Tar bort från Array
       if (itemLabel.getAttribute("class") == "completed") { // Så att räknaren går rätt
         item.remove();
       }
