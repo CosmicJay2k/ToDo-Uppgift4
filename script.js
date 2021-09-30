@@ -76,6 +76,8 @@ function addItem() {
 
     /* Metod för att ta bort */
     trashcan.addEventListener("click", function () {
+      const index = stuffArray.indexOf(text);
+      stuffArray.splice(index, 1);
       if (itemLabel.getAttribute("class") == "completed") { // Så att räknaren går rätt
         item.remove();
       }
