@@ -27,12 +27,12 @@ li{
   font-size: 1.5em;
 }
 .trashcan{
-  font-size: 0.8em;
+  font-size: 0.9em;
   cursor: pointer;
   text-decoration: none;
 }
 .trashcan:hover{
-  font-size: 0.9em;
+  color: red;
 }
 footer{
   position: fixed;

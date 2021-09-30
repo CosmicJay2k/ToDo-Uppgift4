@@ -1,9 +1,10 @@
 /* HTML-element */
 const input = document.querySelector("input"); // Input
 const list = document.querySelector("ul"); // Lista
-const stuffArray = []; // Array för lagring
 const msg = document.querySelector("#msgHTML"); // Meddelande
 const headText = document.querySelector("h1"); // Rubrik
+
+const stuffArray = []; // Array för lagring
 let leftToDoCount = 0; // Räknare
 
 input.focus(); // För att alltid kunna skriva
@@ -42,12 +43,12 @@ function addItem() {
     list.appendChild(item);
     /* Label */
     const itemLabel = document.createElement("span");
-    itemLabel.innerText = text + "  ";
+    itemLabel.innerText = text;
     itemLabel.setAttribute("class", "label");
     item.appendChild(itemLabel);
     /* Soptunna */
     const trashcan = document.createElement("span");
-    trashcan.innerHTML = '&#x1F5D1;';
+    trashcan.innerHTML = "  " + '&#x1F5D1;';
     trashcan.setAttribute("class", "trashcan");
     item.appendChild(trashcan);
 
