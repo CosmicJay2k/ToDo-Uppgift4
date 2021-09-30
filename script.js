@@ -49,13 +49,13 @@ function addItem() {
     const trashcan = document.createElement("span");
     trashcan.innerHTML = '&#x1F5D1;';
     trashcan.setAttribute("class", "trashcan");
-    item.appendChild(trashcan)
+    item.appendChild(trashcan);
 
     stuffArray.push(text); // Lägger till i array
     input.value = ""; // Tömmer input
     msg.innerHTML = "Lägg till något mer!";
     leftToDoCount++;
-    counterFunc() // Räknarfunktion
+    counterFunc();
     input.focus();
 
     /* Metod för markering */
@@ -70,7 +70,7 @@ function addItem() {
         leftToDoCount--;
         input.focus();
       }
-      counterFunc()
+      counterFunc();
     });
 
     /* Metod för att ta bort */
