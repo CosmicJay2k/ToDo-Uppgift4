@@ -6,11 +6,7 @@ const msg = document.querySelector("#msgHTML"); // Meddelande
 const headText = document.querySelector("h1"); // Rubrik
 let leftToDoCount = 0; // Räknare
 
-/* Funktion för att alltid vara redo att skriva */
-function getFocus() {
-  input.focus();
-}
-getFocus();
+input.focus();
 
 /* Funktion för räknare */
 function counterFunc() {
@@ -39,7 +35,7 @@ function addItem() {
   const text = input.value;
   if (text.length == 0) { // Kontrollerar att något är skrivet
     msg.innerHTML = "Skriv något!";
-    getFocus();
+    input.focus();
     return;
   }
   else { // Lägg till i listan
@@ -61,19 +57,19 @@ function addItem() {
     msg.innerHTML = "Lägg till något mer!";
     leftToDoCount++;
     counterFunc() // Räknarfunktion
-    getFocus();
+    input.focus();
 
     /* Metod för markering */
     itemLabel.addEventListener("click", function () {
       if (itemLabel.getAttribute("class") == "completed") {
         itemLabel.setAttribute("class", "");
         leftToDoCount++;
-        getFocus();
+        input.focus();
       }
       else {
         itemLabel.setAttribute("class", "completed");
         leftToDoCount--;
-        getFocus();
+        input.focus();
       }
       counterFunc()
     });
@@ -88,7 +84,7 @@ function addItem() {
         leftToDoCount--;
       }
       counterFunc();
-      getFocus();
+      input.focus();
     });
   }
 };
