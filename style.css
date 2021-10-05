@@ -13,6 +13,7 @@ h2{
 }
 #inputHTML, button{
   font-size: 1em;
+  border-radius: 6px;
 }
 .completed{
   text-decoration: line-through;
@@ -40,7 +41,7 @@ li:nth-child(odd){
 .trashcan:hover{
   color: red;
 }
-footer{
+.author{
   position: fixed;
   bottom: 5px;
   color: rgb(97, 116, 150);

@@ -15,16 +15,14 @@
   text-align: center;
   padding: 1px 0px 0px 0px;
   border-radius: 6px;
-
   /*Position tooltip*/
   position: absolute;
   bottom: 80%;
   left: 50%;
   margin-left: -7em;
-
   /*Fade in*/
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s 0.6s;
 }
 
 /*Tooltip arrow*/
@@ -39,8 +37,35 @@ border-style: solid;
 border-color: #555 transparent transparent transparent;
 }
 
-/*Show tooltip*/
+/*Show tooltiptext*/
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 0.9;
+}
+
+/*Tooltip text Clear button*/
+.tooltiptextclear {
+  line-height: 1.6em;
+  font-size: 1em;
+  visibility: hidden;
+  width: 6em;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 1px 0px 0px 0px;
+  border-radius: 6px;
+  /*Position tooltip*/
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  margin-left: -3em;
+  /*Fade in*/
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+/*Show tooltiptextclear*/
+.tooltip:hover .tooltiptextclear{
+  visibility: visible;
+  opacity: 1;
 }

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- För plustecken / font -->
+  <!-- För tecken / font -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,19 +23,17 @@
   <!-- Input -->
   <div>
     <input type="text" id="inputHTML" placeholder="Skriv">
-    <button type="submit" id="btnAdd" name="btnAdd"><i class="fas fa-plus-square"></i> Lägg till</button>
+    <button type="submit" id="btnAdd"><i class="fas fa-plus-square"></i> Lägg till</button>
+    <button type="submit" class="tooltip" id="btnClear"><i class="fas fa-minus-square"></i></button>
     <br>
     <!-- Listan -->
     <div>
       <ul class="toDoList">
       </ul>
     </div>
-    <div>
-      <button type="submit" id="btnClear" name="btnClear"><i class="fas fa-minus-square"></i> Rensa listan</button>
-    </div>
   </div>
 
-  <footer>Powered by //prosIT</footer>
+  <footer class="author">Powered by //prosIT</footer>
   <script src="script.js"></script>
 </body>
 

@@ -57,6 +57,11 @@ function addItem() {
     trashcan.setAttribute("class", "trashcan");
     item.appendChild(trashcan);
 
+    const btnClearTooltip = document.createElement("span");
+    btnClearTooltip.innerText = "Rensa listan";
+    btnClearTooltip.setAttribute("class", "tooltiptextclear")
+    btnClear.appendChild(btnClearTooltip);
+
     stuffArray.push(text); // Lägger till i array
     input.value = ""; // Tömmer input
     msg.innerHTML = "Lägg till något mer!";
