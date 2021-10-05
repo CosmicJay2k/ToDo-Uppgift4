@@ -18,7 +18,7 @@ h2{
   text-decoration: line-through;
 }
 .toDoList{ 
-  padding: 0.5em;
+  padding:  1em 10em 0em 10em;
   list-style: none;
   color: white;
 }
@@ -26,10 +26,16 @@ li{
   line-height: 1.8em;
   font-size: 1.5em;
 }
+li:nth-child(odd){
+  background-color: rgb(97, 116, 150);
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+}
 .trashcan{
   font-size: 0.9em;
   cursor: pointer;
   text-decoration: none;
+  margin-left: 10px;
 }
 .trashcan:hover{
   color: red;
@@ -37,5 +43,7 @@ li{
 footer{
   position: fixed;
   bottom: 5px;
+  color: rgb(97, 116, 150);
+  font-family: monospace;
   font-size: 0.6em;
 }

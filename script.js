@@ -4,7 +4,7 @@ const list = document.querySelector("ul"); // Lista
 const msg = document.querySelector("#msgHTML"); // Meddelande
 const headText = document.querySelector("h1"); // Rubrik
 
-const stuffArray = []; // Array för lagring
+let stuffArray = []; // Array för lagring
 let leftToDoCount = 0; // Räknare
 
 input.focus(); // För att alltid kunna skriva
@@ -43,12 +43,17 @@ function addItem() {
     list.appendChild(item);
     /* Label */
     const itemLabel = document.createElement("span");
+    itemLabel.setAttribute("class", "tooltip");
     itemLabel.innerText = text;
-    itemLabel.setAttribute("class", "label");
     item.appendChild(itemLabel);
+    /* Tooltip */
+    const itemTooltip = document.createElement("span");
+    itemTooltip.innerText = "Tryck för att markera som klar";
+    itemTooltip.setAttribute("class", "tooltiptext");
+    itemLabel.appendChild(itemTooltip);
     /* Soptunna */
     const trashcan = document.createElement("span");
-    trashcan.innerHTML = "  " + '&#x1F5D1;';
+    trashcan.innerHTML = '&#x1F5D1;';
     trashcan.setAttribute("class", "trashcan");
     item.appendChild(trashcan);
 
@@ -61,13 +66,15 @@ function addItem() {
 
     /* Metod för markering */
     itemLabel.addEventListener("click", function () {
-      if (itemLabel.getAttribute("class") == "completed") {
-        itemLabel.setAttribute("class", "");
+      if (itemLabel.getAttribute("class") == "completed tooltip") { // Om den är Completed
+        itemTooltip.innerText = "Tryck för att markera som klar";
+        itemLabel.setAttribute("class", "tooltip");
         leftToDoCount++;
         input.focus();
       }
       else {
-        itemLabel.setAttribute("class", "completed");
+        itemLabel.setAttribute("class", "completed tooltip");
+        itemTooltip.innerText = "Tryck för att avmarkera";
         leftToDoCount--;
         input.focus();
       }
@@ -77,7 +84,7 @@ function addItem() {
     /* Metod för att ta bort */
     trashcan.addEventListener("click", function () {
       stuffArray.splice(stuffArray.indexOf(text), 1); // Tar bort från Array
-      if (itemLabel.getAttribute("class") == "completed") { // Så att räknaren går rätt
+      if (itemLabel.getAttribute("class") == "completed tooltip") { // Så att räknaren går rätt
         item.remove();
       }
       else {
@@ -89,3 +96,12 @@ function addItem() {
     });
   }
 };
+
+/* Rensa listan */
+btnClear.addEventListener("click", function () {
+  list.innerHTML = "";
+  leftToDoCount = 0;
+  stuffArray = [];
+  counterFunc();
+  input.focus();
+});
