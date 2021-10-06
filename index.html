@@ -11,30 +11,48 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link id="csslink" rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="tooltip.css">
 
   <title>Att göra</title>
 </head>
 
 <body>
-  <h1>To Do for You</h1>
-  <h2 id="msgHTML">Lägg till någonting!</h2>
-  <!-- Input -->
-  <div>
-    <input type="text" id="inputHTML" placeholder="Skriv">
-    <button type="submit" id="btnAdd"><i class="fas fa-plus-square"></i></button>
-    <button type="submit" class="tooltip" id="btnClear"><i class="fas fa-minus-square"></i></button>
-    <br>
-    <!-- Listan -->
+  <div id="mainDiv">
+    <h1>To Do for You</h1>
+    <h2 id="msgHTML">Lägg till någonting!</h2>
+    <!-- Input -->
     <div>
-      <ul class="toDoList">
-      </ul>
+      <input type="text" id="inputHTML" placeholder="Skriv">
+      <button type="submit" id="btnAdd"><i class="fas fa-plus-square"></i></button>
+      <button type="submit" class="tooltip" id="btnClear"><i class="fas fa-minus-square"></i></button>
+      <br>
+      <!-- Listan -->
+      <div>
+        <ul class="toDoList">
+        </ul>
+      </div>
     </div>
   </div>
+  <!-- Länkar -->
+  <p>Style:</p>
+  <a href="#" onclick="document.querySelector('#csslink').href = 'style.css'">Main</a>
+  <a href="#" onclick="document.querySelector('#csslink').href = 'emelie.css'">Emelie</a>
 
   <footer class="author">Powered by //prosIT</footer>
   <script src="script.js"></script>
 </body>
 
 </html>
+
+<!--
+  Steg 1: Vad vill jag göra?
+  Lägga till länkar som ändrar css
+
+  Steg 2: Separata problem
+  a: Byta CSS >>>
+  b: Byta css med javascript >>>
+  c: Göra länkar >>>
+  d: Lyssna på klick >>>
+  f: Göra CSS
+-->

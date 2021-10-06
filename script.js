@@ -4,9 +4,14 @@ const list = document.querySelector("ul"); // Lista
 const msg = document.querySelector("#msgHTML"); // Meddelande
 const headText = document.querySelector("h1"); // Rubrik
 
+/* Rensa listan tooltip*/
+const btnClearTooltip = document.createElement("span");
+btnClearTooltip.innerText = "Rensa listan";
+btnClearTooltip.setAttribute("class", "tooltiptextclear")
+btnClear.appendChild(btnClearTooltip);
+
 let stuffArray = []; // Array för lagring
 let leftToDoCount = 0; // Räknare
-
 input.focus(); // För att alltid kunna skriva
 
 /* Funktion för räknare */
@@ -57,10 +62,7 @@ function addItem() {
     trashcan.setAttribute("class", "trashcan");
     item.appendChild(trashcan);
 
-    const btnClearTooltip = document.createElement("span");
-    btnClearTooltip.innerText = "Rensa listan";
-    btnClearTooltip.setAttribute("class", "tooltiptextclear")
-    btnClear.appendChild(btnClearTooltip);
+
 
     stuffArray.push(text); // Lägger till i array
     input.value = ""; // Tömmer input

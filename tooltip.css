@@ -45,7 +45,7 @@ border-color: #555 transparent transparent transparent;
 
 /*Tooltip text Clear button*/
 .tooltiptextclear {
-  line-height: 1.6em;
+  line-height: 1.2em;
   font-size: 1em;
   visibility: hidden;
   width: 6em;
@@ -56,8 +56,8 @@ border-color: #555 transparent transparent transparent;
   border-radius: 6px;
   /*Position tooltip*/
   position: absolute;
-  bottom: 110%;
-  left: 50%;
+  bottom: 0%;
+  left: 350%; /* Här hålls det på!! GÖR OM TILL *EM*/
   margin-left: -3em;
   /*Fade in*/
   opacity: 0;
