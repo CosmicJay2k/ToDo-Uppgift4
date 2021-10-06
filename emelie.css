@@ -26,6 +26,12 @@ h2{
   font-size: 1em;
   outline: none;
 }
+#btnAdd{
+  display: none;
+}
+#btnClear{
+  display: none;
+}
 .completed{
   text-decoration: line-through;
 }
@@ -43,9 +49,6 @@ li{
   font-size: 1.2em;
   cursor: pointer;
   margin-left: 10px;
-}
-#btnClear{
-  display: none;
 }
 .author{
   position: fixed;

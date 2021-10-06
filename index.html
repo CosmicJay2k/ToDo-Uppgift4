@@ -24,6 +24,7 @@
     <!-- Input -->
     <div>
       <input type="text" id="inputHTML" placeholder="Skriv">
+      <button type="submit" id="btnOK">OK</button>
       <button type="submit" id="btnAdd"><i class="fas fa-plus-square"></i></button>
       <button type="submit" class="tooltip" id="btnClear"><i class="fas fa-minus-square"></i></button>
       <br>
@@ -36,8 +37,8 @@
   </div>
   <!-- Länkar -->
   <p>Style:</p>
-  <a href="#" onclick="document.querySelector('#csslink').href = 'style.css'">Main</a>
-  <a href="#" onclick="document.querySelector('#csslink').href = 'emelie.css'">Emelie</a>
+  <a href="#" onclick="document.querySelector('#csslink').href = 'style.css', input.focus()">Main</a>
+  <a href="#" onclick="document.querySelector('#csslink').href = 'emelie.css', input.focus()">Emelie</a>
 
   <footer class="author">Powered by //prosIT</footer>
   <script src="script.js"></script>

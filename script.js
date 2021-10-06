@@ -26,6 +26,7 @@ function counterFunc() {
 
 /* Klicka på knappen: Lägga till */
 btnAdd.addEventListener("click", addItem);
+btnOK.addEventListener("click", addItem);
 
 /* Trycka Return/Enter: Lägga till */
 inputHTML.addEventListener("keyup", function (e) {

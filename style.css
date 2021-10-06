@@ -24,6 +24,9 @@ h2{
   border-radius: 6px;
   outline: none;
 }
+#btnOK{
+  display: none;
+}
 .completed{
   text-decoration: line-through;
 }
