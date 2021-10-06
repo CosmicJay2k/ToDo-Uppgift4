@@ -5,7 +5,7 @@ body{
 }
 #mainDiv{
   background-image: url("colorclouds.jpg");
-  padding: 1em;
+  padding: 0.5em;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
 }
 a{
@@ -16,7 +16,6 @@ a{
 h1{
   color: rgb(245, 156, 193);
   font-family: Times, "Times New Roman",sans-serif;
-  margin: 0;
 }
 h2{
   color: rgb(245, 156, 193);
@@ -33,7 +32,7 @@ h2{
 .toDoList{ 
   padding:  1em 10em 0em 10em;
   list-style: none;
-  color: rgb(110, 73, 245);
+  color: rgba(110, 73, 245, 0.596);
 }
 li{
   line-height: 1.8em;
