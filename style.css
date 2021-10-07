@@ -38,6 +38,16 @@ h2{
 li{
   line-height: 1.8em;
   font-size: 1.5em;
+  animation: todo-enter 1s;
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes todo-enter {
+  0%{
+    transform: translate(-1300px, 0);
+  }
+  100%{
+    transform: translate(0, 0);
+  }
 }
 li:nth-child(odd){
   background-color: rgb(97, 116, 150);
