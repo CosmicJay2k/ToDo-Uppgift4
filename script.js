@@ -63,8 +63,6 @@ function addItem() {
     trashcan.setAttribute("class", "trashcan");
     item.appendChild(trashcan);
 
-
-
     stuffArray.push(text); // Lägger till i array
     input.value = ""; // Tömmer input
     msg.innerHTML = "Lägg till något mer!";
